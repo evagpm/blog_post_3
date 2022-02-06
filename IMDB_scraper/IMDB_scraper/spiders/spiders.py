@@ -11,7 +11,7 @@ class ImdbSpider(scrapy.Spider):
     start_urls = ['https://www.imdb.com/title/tt2261391/']
 
     """
-    The function navigates to the cast and characters page and calls the parse_full_credits
+    The method navigates to the cast and characters page and calls the parse_full_credits
 
     Inputs: self - an instance of the spider
             response - the page to parse 
@@ -24,7 +24,7 @@ class ImdbSpider(scrapy.Spider):
         yield scrapy.Request(page, callback = self.parse_full_credits)
 
     """
-    The function scrapes the urls of the case member pages and calls parse_actor_page on each
+    The method scrapes the urls of the case member pages and calls parse_actor_page on each
 
     Inputs: self - the instance of the spider
             response - the page to parse
@@ -44,7 +44,7 @@ class ImdbSpider(scrapy.Spider):
             yield scrapy.Request(page, callback = self.parse_actor_page)
 
     """
-    The function scrapes the name and films for the actor
+    The method scrapes the name and films for the actor
 
     Inputs: self - an instance of the spider
             response - the page to parse
